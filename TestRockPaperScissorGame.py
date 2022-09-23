@@ -8,21 +8,33 @@ class MyTestCase(unittest.TestCase):
 
     def test_find_winner_choice_player_win(self):
         """Do test player is the winner."""
-        self.assertEqual("player", find_winner_choice("paper", "rock"))
-        self.assertEqual("player", find_winner_choice("rock", "scissor"))
-        self.assertEqual("player", find_winner_choice("scissor", "paper"))
+        player, computer = "paper", "rock"
+        winner = "player"
+        self.assertEqual(winner, find_winner_choice(player, computer))
+        player, computer = "rock", "scissor"
+        self.assertEqual(winner, find_winner_choice(player, computer))
+        player, computer = "scissor", "paper"
+        self.assertEqual(winner, find_winner_choice(player, computer))
 
     def test_find_winner_choice_computer_win(self):
         """Do test computer is the winner."""
-        self.assertEqual("computer", find_winner_choice("rock", "paper"))
-        self.assertEqual("computer", find_winner_choice("scissor", "rock"))
-        self.assertEqual("computer", find_winner_choice("paper", "scissor"))
+        computer, player = "paper", "rock"
+        winner = "computer"
+        self.assertEqual(winner, find_winner_choice(player, computer))
+        computer, player = "rock", "scissor"
+        self.assertEqual(winner, find_winner_choice(player, computer))
+        computer, player = "scissor", "paper"
+        self.assertEqual(winner, find_winner_choice(player, computer))
 
     def test_find_winner_choice_draw_result(self):
         """Do test function find winner choice draw result."""
-        self.assertEqual("draw", find_winner_choice("rock", "rock"))
-        self.assertEqual("draw", find_winner_choice("scissor", "scissor"))
-        self.assertEqual("draw", find_winner_choice("paper", "paper"))
+        winner = "draw"
+        player, computer = "rock", "rock"
+        self.assertEqual(winner, find_winner_choice(player, computer))
+        player, computer = "scissor", "scissor"
+        self.assertEqual(winner, find_winner_choice(player, computer))
+        player, computer = "paper", "paper"
+        self.assertEqual(winner, find_winner_choice(player, computer))
 
     def test_find_winner_choice_invalid_input(self):
         """Do test invalid input for find winner choice."""
