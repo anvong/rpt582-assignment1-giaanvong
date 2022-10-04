@@ -8,9 +8,13 @@ def find_winner_choice(player, computer):
 
     if player == computer and (player in possible_choice):
         return "draw"
-    elif (player == "paper" and computer == "rock") or (player == "rock" and computer == "scissor") or (player == "scissor" and computer == "paper"):  # noqa
+    elif (player == "paper" and computer == "rock") \
+            or (player == "rock" and computer == "scissor") \
+            or (player == "scissor" and computer == "paper"):
         return "player"
-    elif (computer == "paper" and player == "rock") or (computer == "rock" and player == "scissor") or (computer == "scissor" and player == "paper"):  # noqa
+    elif (computer == "paper" and player == "rock") \
+            or (computer == "rock" and player == "scissor") \
+            or (computer == "scissor" and player == "paper"):
         return "computer"
     else:
         raise ValueError
@@ -58,8 +62,20 @@ def new_game():
                 computer_score += 1
                 result = "computer won"
 
-            print("Round ", match_round, "result: your choice:", player, ", computer's choice:", computer, "\nResult:", result, "\tPlayer Score:",  # noqa
-                player_score, "\tComputer Score:", computer_score)  # noqa
+            # print("Round ", match_round, "result: your choice:",
+            #     player, ", computer's choice:", computer, "\nResult:",
+            #     result, "\tPlayer Score:",
+            #     player_score, "\tComputer Score:",
+            #         computer_score)  # noqa
+            print(
+                "You chose [{player}] vs Computer [{computer}]"
+                .format(player=player, computer=computer))
+            print("Round {round} result: {result}.".format(
+                round=match_round, result=result), end=" ")
+            print("Player Score: {player_score}".format(
+                player_score=player_score), end=" ")
+            print("tComputer Score: {computer_score}".format(
+                computer_score=computer_score))
             # increase match round for next loop
             match_round += 1
 
@@ -75,10 +91,11 @@ if __name__ == '__main__':
 
     # Print multiline instruction
     # performstring concatenation of string
-    print("Welcome to the rock paper scissor game, the Winning Rules are as follows: \n"  # noqa
-        + "rock vs paper->paper wins \n"  # noqa
-        + "rock vs scissor->rock wins \n"  # noqa
-        + "paper vs scissor->scissor wins\n")  # noqa
+    print("Welcome to the rock paper scissor game, "
+          "the Winning Rules are as follows: \n"
+          "rock vs paper->paper wins \n"
+          "rock vs scissor->rock wins \n"
+          "paper vs scissor->scissor wins\n")
 
     # start first game
     new_game()
@@ -90,5 +107,5 @@ if __name__ == '__main__':
             # start game again
             new_game()
         else:
-            print("Than you! See you soon.")
+            print("Thank you! See you soon.")
             break
