@@ -253,6 +253,35 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(game_object.print_round_result(
             player, computer, winner))
 
+    def test_print_round_result_error(self):
+        """Test print match round result with error data."""
+        game_object = RockPaperScissor()
+
+        # Test case 1 print player win message
+        player, computer = "paper1", "rock"
+        winner = "player"
+
+        # Value error
+        self.assertRaises(
+            ValueError, game_object.print_round_result,
+            player, computer, winner)
+
+        # Test case 2 print player win message
+        player, computer = "paper", "rock1"
+        winner = "player"
+        # Value error
+        self.assertRaises(
+            ValueError, game_object.print_round_result,
+            player, computer, winner)
+
+        # Test case 3 print player win message
+        player, computer = "paper", "rock"
+        winner = "nobody"
+        # Value error
+        self.assertRaises(
+            ValueError, game_object.print_round_result,
+            player, computer, winner)
+
 
 # main class for unit test
 if __name__ == '__main__':
