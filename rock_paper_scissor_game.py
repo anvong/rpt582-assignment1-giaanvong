@@ -176,7 +176,9 @@ if __name__ == '__main__':
           "the Winning Rules are as follows: \n"
           "rock vs paper->paper wins \n"
           "rock vs scissor->rock wins \n"
-          "paper vs scissor->scissor wins\n")
+          "paper vs scissor->scissor wins\n"
+          "One point is given to the winner.\n"
+          "The first to get five points wins the game.\n")
 
     # start first game
     game = RockPaperScissor()

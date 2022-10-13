@@ -1,6 +1,6 @@
 """Unit test for Rock Paper Scissor game."""
 import unittest
-from RockPaperScissorGame import RockPaperScissor
+from rock_paper_scissor_game import RockPaperScissor
 
 
 class MyTestCase(unittest.TestCase):
